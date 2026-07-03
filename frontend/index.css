@@ -7,14 +7,25 @@ h1{
     /* border: 4px;
     border-style:dashed;
     border-color:pink; */
-    border: 5px solid rgb(226, 37, 68);
+    border: 5px solid rgb(53, 37, 226);
     background-color: rgb(197, 214, 220);
-    padding: 10px;
-    margin: 10px;
 }
 #p2{
     color:blue;
 }
 #home-intro:hover{
     background-color: rgb(149, 199, 149);
+}
+#nav{
+ text-align: center;
+ background-color:brown;
+ height:25px;
+ padding-top: 5px;
+ margin-bottom: 5px;
+}
+
+#nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
 }
