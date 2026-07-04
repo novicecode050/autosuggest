@@ -62,9 +62,13 @@
         width: 282px; 
         margin: 0 auto;
         border: none; 
-        padding: 6px 15px;
         background-color: #fff;
         box-sizing: border-box;
+      }
+      #suggestion-item {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
       }
 
     </style>
@@ -82,12 +86,41 @@
         
         <div class="search-bar-container">
             <span id="lens">🔍</span> 
-            <input type="text" placeholder="Search your phrase here">
+            <input type="text" id="search-input" placeholder="Search your phrase here">
         </div>
         <div id="suggestion-box">
 
         </div>
     </div> 
+<script>
+    var searchBox = document.getElementById('search-input');  
+    var suggestionBox = document.getElementById('suggestion-box');
 
+     searchBox.addEventListener("input", function() {
+        var userTypedText = searchBox.value;
+        if(userTypedText.trim()=="") {
+            suggestionBox.innerHTML = "";
+        }
+        else{
+            var url1="https://autosuggest-backend.onrender.com/api/autosuggest?q=";
+            var url3= "&algorithm=brute&limit=10&weighted=false";
+            var url=url1+userTypedText+url3;
+            fetch(url).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                console.log(data);
+                var resArray=data.results;
+                var suggestionsHTML = "";
+                for (var i = 0; i < resArray.length; i++) {
+                    suggestionsHTML += "<div id='suggestion-item'>" + resArray[i].text + "</div>";
+                }
+                suggestionBox.innerHTML = suggestionsHTML;  
+
+                
+            });
+
+        }
+     });
+</script>
 </body>
 </html>
