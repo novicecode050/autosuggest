@@ -4,9 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Suggest Page</title>
-    <p>this is the autosuggest page</p>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .left-bar {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+      }
+      .right-bar {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+      .search-section {
+        margin-top: 150px; 
+        text-align: center;
+      }
+
+      /* Updated: Container stylized to be a curvy bar */
+      .search-bar-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px; 
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        padding: 6px 15px;
+        background-color: #fff;
+      }
+      
+      #lens {
+        position: relative;
+        top: 1px;
+      }
+      
+      input {
+        border: none;
+        outline: none;
+        padding: 10px 5px;
+        font-size: 1rem;
+        width: 250px;
+        background: transparent;
+      }
+      
+      #first-word {
+        color: #0d11f2;
+      }
+      #second-word {
+        color: #130101;
+      }
+      #suggestion-box {
+        margin-top: 20px;
+        text-align: center;
+      }
+      #suggestion-box input {
+        border: 1px solid #ccc;
+        padding: 6px 15px;
+        background-color: #fff;
+      }
+
+    </style>
 </head>
 <body>
-    
+
+    <div>
+        <span class="left-bar">⚙️</span>
+        <span class="right-bar">• online | 🕒 -ms</span>
+    </div>
+
+    <div class="search-section">
+        <h1 id="web-title"><span id="first-word">Tea</span><span id="second-word">Search</span> ☕👥</h1>
+        <p id="tagline">One Million Phrases. Four Algorithms. Prefix Based Auto Suggest.</p>
+        
+        <div class="search-bar-container">
+            <span id="lens">🔍</span> 
+            <input type="text" placeholder="Search your phrase here">
+        </div>
+    </div> 
+    <div id="suggestion-box">
+        <input type="text" placeholder="See suggestions here">
+    </div>
+
 </body>
 </html>
