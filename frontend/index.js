@@ -22,4 +22,18 @@ document.getElementById("card-name").innerHTML=users[currId].name;
 document.getElementById("card-gender").innerHTML=users[currId].gender;
 document.querySelector("#card-img img").src=users[currId].image;
 }
-console.log("Hello from JS");
+
+function getRandomUser(){
+    fetch("https://randomuser.me/api/")
+    .then(function(data){
+        return data.json();
+    })
+    .then(function(parsedData){
+       let gender=parsedData.results[0].gender;
+         let name=parsedData.results[0].name.first+" "+parsedData.results[0].name.last;
+         let image=parsedData.results[0].picture.large;
+         document.getElementById("card-name").innerHTML=name;
+         document.getElementById("card-gender").innerHTML="Gender: "+gender;
+         document.querySelector("#card-img img").src=image;
+    })
+}
