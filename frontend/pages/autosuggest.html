@@ -23,9 +23,9 @@
       .search-section {
         margin-top: 150px; 
         text-align: center;
+        position: relative; 
       }
 
-      /* Updated: Container stylized to be a curvy bar */
       .search-bar-container {
         display: inline-flex;
         align-items: center;
@@ -57,14 +57,14 @@
       #second-word {
         color: #130101;
       }
+      
       #suggestion-box {
-        margin-top: 20px;
-        text-align: center;
-      }
-      #suggestion-box input {
-        border: 1px solid #ccc;
+        width: 282px; 
+        margin: 0 auto;
+        border: none; 
         padding: 6px 15px;
         background-color: #fff;
+        box-sizing: border-box;
       }
 
     </style>
@@ -84,10 +84,10 @@
             <span id="lens">🔍</span> 
             <input type="text" placeholder="Search your phrase here">
         </div>
+        <div id="suggestion-box">
+
+        </div>
     </div> 
-    <div id="suggestion-box">
-        <input type="text" placeholder="See suggestions here">
-    </div>
 
 </body>
 </html>
